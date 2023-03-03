@@ -8,10 +8,9 @@ class Solution {
             table.put(nums[i],i);
         }
         for(int i=0;i<nums.length;i++) {
-            if(table.get(target - nums[i]) != null && table.get(target - nums[i]) != i) {
-                arr[0] = table.get(target - nums[i]);
-                arr[1] = i;
-                break;
+            Integer idx = table.get(target - nums[i]);
+            if(idx != null && idx != i) {
+                return new int[] {idx, i};
             }
         }
         return arr;
