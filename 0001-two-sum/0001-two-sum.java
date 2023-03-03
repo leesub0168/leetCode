@@ -10,7 +10,9 @@ class Solution {
         for(int i=0;i<nums.length;i++) {
             Integer idx = map.get(target - nums[i]);
             if(idx != null && idx != i) {
-                return new int[] {idx, i};
+                arr[0] = idx;
+                arr[1] = i;
+                return arr;
             }
         }
         return arr;
