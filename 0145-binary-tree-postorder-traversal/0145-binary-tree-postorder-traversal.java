@@ -14,13 +14,11 @@
  * }
  */
 class Solution {
+    List<Integer> list = new ArrayList<>();
     public List<Integer> postorderTraversal(TreeNode root) {
-        if(root == null) new ArrayList<>();
-        List<Integer> list = new ArrayList<>();
-        
         if(root != null) {
-            list.addAll(postorderTraversal(root.left));
-            list.addAll(postorderTraversal(root.right));
+            postorderTraversal(root.left);
+            postorderTraversal(root.right);
             list.add(root.val);
         }
         
